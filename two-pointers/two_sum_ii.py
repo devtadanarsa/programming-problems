@@ -15,3 +15,17 @@ class Solution(object):
                 return [idx + 1, hashTable[temp] + 1]
         
         return [-1, 0]
+
+    def twoSumTwoPointer(numbers, target):
+        ptrOne, ptrTwo = 0, len(numbers) - 1
+        
+        while ptrOne < ptrTwo:
+            if numbers[ptrOne] + numbers[ptrTwo] == target:
+                return [ptrOne + 1, ptrTwo + 1]
+            elif numbers[ptrOne] + numbers[ptrTwo] < target:
+                ptrOne += 1
+            elif numbers[ptrOne] + numbers[ptrTwo] > target:
+                ptrTwo -= 1
+        
+        return [ptrOne, ptrTwo]
+        
